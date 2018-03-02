@@ -67,6 +67,7 @@ class Link extends React.Component {
         <header id="header">
           <h1 id="title">NYT Explorer</h1>
         </header>
+
         <div id="text">
           <p>The New York Times Archive provides lists of NYT articles by month going back to 1851. Simply pass in the year and month you want and Explorer will return all articles for that month.</p>
           <form onSubmit={this.handleSubmit} id="nytForm">
@@ -119,7 +120,7 @@ class Preview extends React.Component {
   render(){
     const links=this.props.selectedArticles;
     return (
-      <div id="gallery">
+      <div id="preview">
           {
             links.map( (article) => {
                 return <Article handleArticleClick={this.props.handleArticleClick} link={article} key={article._id} url={article.web_url} />;

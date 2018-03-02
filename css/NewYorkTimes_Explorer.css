@@ -44,7 +44,7 @@ body {
 /* =================================== HEADER ================================= */
 #header {
   flex: 0 1 auto;
-  background: paleturquoise;
+  background: linear-gradient(90deg, #fff5e6, #ffd699);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -68,10 +68,6 @@ body {
   margin-left: 5px;
 }
 
-/*#body{
-  flex: 0 1 auto;
-  fle
-}*/
 
 /* =================================== articleContainer ================================= */
 
@@ -87,23 +83,20 @@ body {
   justify-content: space-between;
 }
 
-#articleContainer > div > #gallery {
-  background: palegoldenrod;
+#articleContainer > div > #preview {
   flex: 1;
   display: flex;
   flex-direction: column;
 }
 
-/* #articleContainer > div > #gallery > .single-article {
-  border: 1px solid red;
-} */
 
-#articleContainer > div > #gallery > .single-article > div {
+#articleContainer > div > #preview > .single-article > div {
   background: white;
   margin: 10px;
+  border: 1px black solid;
 }
 
-#articleContainer > div > #gallery > .single-article > div > img {
+#articleContainer > div > #preview > .single-article > div > img {
   width: 100%;
 }
 
@@ -120,6 +113,46 @@ body {
 /* =================================== FOOTER ================================= */
 #footer {
   flex: 0 1 auto;
-  background: palevioletred;
+  background: #dcdddd;
   text-align: center;
+  font-style: Arial;
+  font-style: italic;
+}
+
+
+/* =================================== MEDIA QUERIES ================================= */
+
+@media (min-width: 768px) {
+  .visible {
+    display: flex;
+    flex-direction: column;
+    /*border: 1px solid black;*/
+  }
+
+  #articleContainer > div > #preview {
+    align-items: flex-start;
+    align-content: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+
+  #articleContainer > div > #preview > .single-article {
+    flex: 0 1 50%;
+  }
+}
+
+@media (min-width: 992px) {
+  
+
+  #articleContainer > div > #preview > .single-article {
+    flex: 0 1 33.33%;
+  }
+
+}
+
+@media (min-width: 1200px) {
+  #articleContainer > div > #preview > .single-article {
+    flex: 0 1 25%;
+  }
 }
