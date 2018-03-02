@@ -1,0 +1,97 @@
+/* =================================== BASE ================================= */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0px;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: palegreen;
+}
+
+#page {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+
+}
+/* =================================== HEADER ================================= */
+#header {
+  flex: 0 1 auto;
+  background: paleturquoise;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+#header > h1 {
+  margin: 0;
+  flex: 0 1 300px;
+}
+#header > form {
+  margin: 0;
+  flex: 0 1 300px;
+  display: flex;
+  justify-content: flex-end;
+  /* border: 1px solid red; */
+}
+
+#header > form > * {
+  margin-left: 5px;
+}
+
+/* =================================== articleContainer ================================= */
+
+#articleContainer {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+#articleContainer > div {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+}
+
+#articleContainer > div > #gallery {
+  background: palegoldenrod;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* #articleContainer > div > #gallery > .single-article {
+  border: 1px solid red;
+} */
+
+#articleContainer > div > #gallery > .single-article > div {
+  background: white;
+  margin: 10px;
+}
+
+#articleContainer > div > #gallery > .single-article > div > img {
+  width: 100%;
+}
+
+#articleContainer > div > #details {
+  flex: 0 0 250px; 
+}
+
+.visible {
+  display: none;
+}
+
+
+
+/* =================================== FOOTER ================================= */
+#footer {
+  flex: 0 1 auto;
+  background: palevioletred;
+  text-align: center;
+}
