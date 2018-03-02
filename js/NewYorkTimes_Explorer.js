@@ -106,7 +106,7 @@ class Link extends React.Component {
         <footer id ="footer">
           <p>Data provided by <img src="img/poweredby_nytimes_65a.png" alt="NYT API"/></p>
           <p>Links preview by Link Preview API</p>
-          <p>&copy; Bojana Milosevic 2018</p>
+          <p>Designed by Bojana Milosevic 2018</p>
         </footer>
       </div>
     );
@@ -143,8 +143,8 @@ class Article extends React.Component {
   componentDidMount() {
   	console.log('componentDidMount');
     const key = '5a8c62dd15c2c14a495f407b8ad447785894dd86df624';
-  //  const url = `http://api.linkpreview.net/?key=${key}&q=${this.props.url}`;
-    const url = `http://api.linkpreview.net/?key=123456&q=https://www.google.com`
+  //  const url = `https://api.linkpreview.net/?key=${key}&q=${this.props.url}`;
+    const url = `https://api.linkpreview.net/?key=123456&q=https://www.google.com`
   
     $.ajax({
         url: url,
