@@ -65,11 +65,11 @@ class Link extends React.Component {
     const jsx = (
       <div id="page">
         <header id="header">
-          <h1>NYT Explorer</h1>
+          <h1 id="title">NYT Explorer</h1>
         </header>
-        <div>
+        <div id="text">
           <p>The New York Times Archive provides lists of NYT articles by month going back to 1851. Simply pass in the year and month you want and Explorer will return all articles for that month.</p>
-          <form onSubmit={this.handleSubmit}>
+          <form onSubmit={this.handleSubmit} id="nytForm">
             <input
               id="month" 
               type="number" 

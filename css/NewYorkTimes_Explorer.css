@@ -11,7 +11,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background: palegreen;
+  background: linear-gradient(90deg, #fff5e6, #ffd699)
 }
 
 #page {
@@ -20,6 +20,27 @@ body {
   flex-direction: column;
 
 }
+
+#title{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-center;
+  font-family: Arial;
+  text-align: center;
+  font-weight: bold;
+  font-style: italic;
+
+}
+
+#text{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-center;
+  font-family: Arial;
+  text-align: center;
+}
+
+
 /* =================================== HEADER ================================= */
 #header {
   flex: 0 1 auto;
@@ -32,18 +53,25 @@ body {
 #header > h1 {
   margin: 0;
   flex: 0 1 300px;
+  text-align: center;
+  justify-content: flex-center;
 }
 #header > form {
   margin: 0;
-  flex: 0 1 300px;
+  flex: 0 1 600px;
   display: flex;
-  justify-content: flex-end;
-  /* border: 1px solid red; */
+  justify-content: flex-center;
+  border: 1px solid red; 
 }
 
 #header > form > * {
   margin-left: 5px;
 }
+
+/*#body{
+  flex: 0 1 auto;
+  fle
+}*/
 
 /* =================================== articleContainer ================================= */
 
