@@ -196,6 +196,7 @@ class ArticleDetails extends React.Component {
               !!Object.keys(thisArticle).length &&
               <div>
               <h3>Title:{thisArticle.headline.main}</h3>
+              <p>Snippet: {thisArticle.snippet}</p>
               <p>Read more:<a href={thisArticle.web_url} target="_blank">{thisArticle.web_url}</a></p>
               <p>Word Count:{thisArticle.word_count}</p>
               <p>Published: {thisArticle.pub_date}</p>

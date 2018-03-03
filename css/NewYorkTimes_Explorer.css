@@ -29,7 +29,7 @@ body {
   text-align: center;
   font-weight: bold;
   font-style: italic;
-  font-size: 1,8vw;
+  
 }
 
 #text{
@@ -51,6 +51,7 @@ body {
   align-items: center;
   padding: 10px;
   text-align: center;
+  font-size: 1,8vw;
 }
 #header > h1 {
   margin: 0;
