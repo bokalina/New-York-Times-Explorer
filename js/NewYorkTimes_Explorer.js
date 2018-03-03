@@ -1,4 +1,5 @@
-class Link extends React.Component {
+{/*Master component*/}
+class App extends React.Component {
   constructor(props) {
       super(props);
       this.setData=this.setData.bind(this);
@@ -10,7 +11,7 @@ class Link extends React.Component {
           allArticles: {},
           year: '1951',
           month: '1',
-          pageSize: 15,
+          pageSize: 20,
           selectedArticle: {}
       };
   }
@@ -131,6 +132,8 @@ class Preview extends React.Component {
   }
 }
 
+{/*Logic for single article preview*/}
+
 class Article extends React.Component {
   constructor(props) {
     super(props);
@@ -144,7 +147,7 @@ class Article extends React.Component {
   componentDidMount() {
   	console.log('componentDidMount');
     const key = '5a8c62dd15c2c14a495f407b8ad447785894dd86df624';
-  //  const url = `https://api.linkpreview.net/?key=${key}&q=${this.props.url}`;
+    // const url = `https://api.linkpreview.net/?key=${key}&q=${this.props.url}`;
     const url = `https://api.linkpreview.net/?key=123456&q=https://www.google.com`
   
     $.ajax({
@@ -181,7 +184,7 @@ class Article extends React.Component {
   }
 } 
 
-
+{/*Logic for details*/}
 class ArticleDetails extends React.Component {
   render() {
     const thisArticle = this.props.selectedArticle;
@@ -203,4 +206,4 @@ class ArticleDetails extends React.Component {
   }
 } 
 
-ReactDOM.render(<Link />, document.getElementById('root'));
+ReactDOM.render(<App />, document.getElementById('root'));

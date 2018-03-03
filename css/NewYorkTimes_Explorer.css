@@ -29,7 +29,7 @@ body {
   text-align: center;
   font-weight: bold;
   font-style: italic;
-
+  font-size: 1,8vw;
 }
 
 #text{
@@ -38,6 +38,7 @@ body {
   justify-content: flex-center;
   font-family: Arial;
   text-align: center;
+  font-size: 1,8vw;
 }
 
 
@@ -46,9 +47,10 @@ body {
   flex: 0 1 auto;
   background: linear-gradient(90deg, #fff5e6, #ffd699);
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   padding: 10px;
+  text-align: center;
 }
 #header > h1 {
   margin: 0;
