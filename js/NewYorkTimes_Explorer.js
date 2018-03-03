@@ -11,7 +11,7 @@ class App extends React.Component {
           allArticles: {},
           year: new Date().getFullYear(),
           month: new Date().getMonth(),
-          pageSize: 3,
+          pageSize: 20,
           selectedArticle: {}
       };
   }
@@ -147,8 +147,8 @@ class Article extends React.Component {
 
   componentDidMount() {
     const key = '5a8c62dd15c2c14a495f407b8ad447785894dd86df624';
-    const url = `https://api.linkpreview.net/?key=${key}&q=${this.props.url}`;
-    // const url = `https://api.linkpreview.net/?key=123456&q=https://www.google.com`
+    // const url = `https://api.linkpreview.net/?key=${key}&q=${this.props.url}`;
+    const url = `https://api.linkpreview.net/?key=123456&q=https://www.google.com`
   
     $.ajax({
         url: url,
