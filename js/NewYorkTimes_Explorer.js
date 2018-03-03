@@ -11,7 +11,7 @@ class App extends React.Component {
           allArticles: {},
           year: new Date().getFullYear(),
           month: new Date().getMonth(),
-          pageSize: 20,
+          pageSize: 3,
           selectedArticle: {}
       };
   }
