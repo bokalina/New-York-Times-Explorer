@@ -9,8 +9,8 @@ class App extends React.Component {
       this.handleArticleClick = this.handleArticleClick.bind(this);
       this.state = {
           allArticles: {},
-          year: '1951',
-          month: '1',
+          year: new Date().getFullYear(),
+          month: new Date().getMonth(),
           pageSize: 20,
           selectedArticle: {}
       };
@@ -23,13 +23,11 @@ class App extends React.Component {
   
   handleMonthChange(e) {
       const month = e.target.value;
-      console.log(month);
       this.setState(() => ({ month: month }));
   }
   
   handleYearChange(e) {
       const year = e.target.value;
-      console.log(year);
       this.setState(() => ({ year: year }));
   }
   handleSubmit(e) {
@@ -37,7 +35,6 @@ class App extends React.Component {
       const year = this.state.year;
       const month = this.state.month;
 
-      console.log(year, month);
       var url = `https://api.nytimes.com/svc/archive/v1/${year}/${month}.json`;
       url += '?' + $.param({
       'api-key': "51e7864a4e7c4a2b990dd8e41f131457"
@@ -52,7 +49,6 @@ class App extends React.Component {
   }
 
   handleArticleClick(selectedArticle) {
-  	console.log("HandleArticleClick!");
       this.setState(() => ({ selectedArticle: selectedArticle }));
   }
 
@@ -70,7 +66,11 @@ class App extends React.Component {
         </header>
 
         <div id="text">
-          <p>The New York Times Archive provides lists of NYT articles by month going back to 1851. Simply pass in the year and month you want and Explorer will return all articles for that month.</p>
+          <div>
+          <p>The New York Times Archive provides lists of NYT articles by month going back to 1851.<br/>
+          Simply pass in the year and month you want and Explorer will return all articles for that month.
+          </p>
+          </div>
           <form onSubmit={this.handleSubmit} id="nytForm">
             <input
               id="month" 
@@ -140,12 +140,12 @@ class Article extends React.Component {
     this.setData = this.setData.bind(this);
     this.handleArticleClick = this.handleArticleClick.bind(this);
     this.state = {
-        details: {}
+        details: {},
+        visible: false
     };
   }
 
   componentDidMount() {
-  	console.log('componentDidMount');
     const key = '5a8c62dd15c2c14a495f407b8ad447785894dd86df624';
     // const url = `https://api.linkpreview.net/?key=${key}&q=${this.props.url}`;
     const url = `https://api.linkpreview.net/?key=123456&q=https://www.google.com`
@@ -159,9 +159,9 @@ class Article extends React.Component {
   }
 
   handleArticleClick() {
-    // console.log(this.props.link);
     const selectedArticle = this.props.link;
     this.props.handleArticleClick(selectedArticle);
+    this.setState((prevState) => ({ visible: !prevState.visible }));
   }
 
   setData(data) {
@@ -177,7 +177,17 @@ class Article extends React.Component {
             <img src={this.state.details.image} alt="PIP"/>
             <h4>{this.state.details.title}</h4>
             <p>{this.state.details.description}</p>
+            { this.state.visible && 
+            <div className="bottom-details">
+              <h3>Title:{link.headline.main}</h3>
+                <p>Snippet: {link.snippet}</p>
+                <a href={link.web_url} target="_blank">Go to website ...</a>  
+                <p>Word Count:{link.word_count}</p>
+                <p>Published: {link.pub_date}</p>
+            </div>
+            }
           </div>
+          
         </div>
       
     );
@@ -188,7 +198,6 @@ class Article extends React.Component {
 class ArticleDetails extends React.Component {
   render() {
     const thisArticle = this.props.selectedArticle;
-    console.log(thisArticle.headline);
     return (
         <div id="details" className="visible" >
             <h3>Details</h3>
@@ -197,7 +206,7 @@ class ArticleDetails extends React.Component {
               <div>
               <h3>Title:{thisArticle.headline.main}</h3>
               <p>Snippet: {thisArticle.snippet}</p>
-              <p>Read more:<a href={thisArticle.web_url} target="_blank">{thisArticle.web_url}</a></p>
+              <a href={thisArticle.web_url} target="_blank">Go to website ...</a>  
               <p>Word Count:{thisArticle.word_count}</p>
               <p>Published: {thisArticle.pub_date}</p>
               </div>
